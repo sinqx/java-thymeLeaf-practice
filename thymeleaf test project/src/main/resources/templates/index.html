@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test game project</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" style="font-size: 35px" th:href="@{/index}">test project</a>
+    </div>
+</nav>
+
+<div class="container " style="max-width: 600px; margin: 5em auto;">
+    <h1>Игра "Поле чудес!"</h1>
+    <h3><a th:href="@{/user_results}">Результаты пользователей</a></h3>
+    <h3><a th:href="@{/start_game}">Играть в "Поле чудес"</a></h3>
+    <h3><a th:href="@{/register}">Регистрация</a></h3>
+    <h3><a th:href="@{/login}">Войти</a></h3>
+</div>
+</body>
+</html>

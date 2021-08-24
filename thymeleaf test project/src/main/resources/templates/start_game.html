@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test game project</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" style="font-size: 35px" th:href="@{/index}">test project</a>
+    </div>
+</nav>
+
+<div class="container ">
+    <form th:action="@{/game_attempt}" th:object="${attemptModel}" method="post" style="max-width: 800px; margin: 5em auto;">
+        <div class="form-group row">
+            <h1> Вопрос: <span th:text="${word.helpQuestion}"> </span></h1>
+
+            <label class="col-form-label col-7">> --  <span th:text="${newHided}"> </span></label><br/>
+
+            <input type="hidden" th:field="*{word}" th:value="${word.getName()}">
+
+            <label class="col-form-label col-7">введите букву
+                <input type="text" class="form-control" th:field="*{letters}"/>
+            </label> <br/>
+
+            <label class="col-form-label col-7">
+                <button class="btn btn-primary" type="submit"> Найти</button>
+            </label> <br/>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
